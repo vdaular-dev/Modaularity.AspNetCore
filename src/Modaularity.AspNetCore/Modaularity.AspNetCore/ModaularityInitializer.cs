@@ -4,12 +4,12 @@ using Modaularity.Abstractions;
 
 namespace Modaularity.AspNetCore; 
 
-public class ModuleFrameworkInitializer : IHostedService
+public class ModaularityInitializer : IHostedService
 {
     private readonly IEnumerable<IModuleCatalog> _moduleCatalogs;
-    private readonly ILogger<ModuleFrameworkInitializer> _logger;
+    private readonly ILogger<ModaularityInitializer> _logger;
 
-    public ModuleFrameworkInitializer(IEnumerable<IModuleCatalog> moduleCatalogs, ILogger<ModuleFrameworkInitializer> logger)
+    public ModaularityInitializer(IEnumerable<IModuleCatalog> moduleCatalogs, ILogger<ModaularityInitializer> logger)
     {
         _moduleCatalogs = moduleCatalogs;
         _logger = logger;

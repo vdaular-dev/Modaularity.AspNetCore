@@ -18,12 +18,12 @@ namespace Modaularity.AspNetCore;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddModuleFramework(this IServiceCollection services, Action<ModuleFrameworkOptions> configure = null)
+    public static IServiceCollection AddModaularity(this IServiceCollection services, Action<ModaularityOptions> configure = null)
     {
         if (configure != null)
             services.Configure(configure);
 
-        services.AddHostedService<ModuleFrameworkInitializer>();
+        services.AddHostedService<ModaularityInitializer>();
         services.AddTransient<ModuleProvider>();
         services.TryAddTransient(typeof(IModuleCatalogConfigurationLoader), typeof(ModuleCatalogConfigurationLoader));
         services.AddTransient(typeof(IConfigurationToCatalogConverter), typeof(FolderCatalogConfigurationConverter));
@@ -62,9 +62,9 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
-    public static IServiceCollection AddModuleFramework<TType>(this IServiceCollection services, string dllPath = "") where TType : class
+    public static IServiceCollection AddModaularity<TType>(this IServiceCollection services, string dllPath = "") where TType : class
     {
-        services.AddModuleFramework();
+        services.AddModaularity();
 
         if (string.IsNullOrWhiteSpace(dllPath))
         {
@@ -91,7 +91,7 @@ public static class ServiceCollectionExtensions
     {
         services.TryAddSingleton<IModuleCatalog>(serviceProvider =>
         {
-            var options = serviceProvider.GetService<IOptions<ModuleFrameworkOptions>>().Value;
+            var options = serviceProvider.GetService<IOptions<ModaularityOptions>>().Value;
 
             if (options.UseConfiguration == false)
                 return new EmptyModuleCatalog();

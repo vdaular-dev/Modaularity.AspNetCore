@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Modaularity para ASP Net Core</Title>
-		<Description>Modaularity para ASP Net Core</Description>
+		<Description>Modaularity para ASP Net Core.</Description>
 		<RepositoryUrl>https://github.com/vdaular/Modaularity.AspNetCore</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>class generator, type generator, dotnet, dotnet 7, aspnetcore</PackageTags>
@@ -28,7 +28,7 @@
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
 	  <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
-	  <PackageReference Include="Modaularity" Version="0.0.1-preview034" />
+	  <PackageReference Include="Modaularity" Version="0.0.1-preview035" />
 	</ItemGroup>
 
 	<Target Name="PrepareReleaseNotes" BeforeTargets="GenerateNuspec">
